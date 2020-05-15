@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
+use Illuminate\Support\Facades\DB;
+
 
 class PostController extends Controller
 {
@@ -16,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = DB::table('posts')->paginate(10);
         return view('posts.index', [
             'posts' => $posts
         ]);
@@ -29,6 +30,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        //$this->authorize('create', Post::class);
         return view('posts.create');
     }
 
@@ -89,9 +91,9 @@ class PostController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  integer $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(CreatePostRequest $request, $id)
     {
         $post = Post::findOrFail($id);
 
@@ -109,7 +111,7 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      *
      * @param integer $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

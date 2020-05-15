@@ -13,22 +13,39 @@
 
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title" />
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" />
+
+                        @error('title')
+                            <p class=" text-danger">{{ $errors->first('title') }}</p>
+                        @enderror
+
                     </div>
 
                     <div class="form-group">
-                        <label for="title">Slug</label>
-                        <input type="text" class="form-control" id="slug" name="slug" />
+                        <label for="slug">Slug</label>
+                        <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" />
+
+                        @error('slug')
+                            <p class=" text-danger">{{ $errors->first('slug') }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="body">Content</label>
-                        <textarea class="form-control" id="content" name="content"></textarea>
+                        <label for="content">Content</label>
+                        <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content"></textarea>
+
+                        @error('content')
+                            <p class=" text-danger">{{ $errors->first('content') }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="title">Image</label>
-                        <input type="text" class="form-control" id="image" name="image" />
+                        <label for="image">Image</label>
+                        <input type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image" />
+
+                        @error('image')
+                            <p class=" text-danger">{{ $errors->first('image') }}</p>
+                        @enderror
                     </div>
 
                     <input type="submit" value="Submit" class="btn btn-success" />
