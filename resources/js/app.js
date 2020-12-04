@@ -1,16 +1,29 @@
 require('./bootstrap');
+import Vue from 'vue';
+import axios from 'axios';
+import Form from './core/Form';
+import Example from './components/Example';
+
+window.axios = axios;
+window.Form = Form;
 
 new Vue({
     el: '#app',
 
+    components: {
+        Example
+    },
+
     data: {
-        name: '',
-        description: '',
+        form: new Form({
+            name: '',
+            description: ''
+        }),
     },
 
     methods: {
         onSubmit() {
-            alert('submitting');
+            this.form.post('/projects/create');
         }
     }
 });
