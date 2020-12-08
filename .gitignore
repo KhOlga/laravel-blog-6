@@ -13,3 +13,6 @@ yarn-error.log
 command.txt
 .idea/*
 .idea
+/public/js/*
+public/images/*
+public/css/*
