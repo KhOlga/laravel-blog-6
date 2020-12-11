@@ -13,8 +13,8 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        $user = User::find(1)->first();
-        $projects = Project::where('user_id', 1)->get();
+        $user = User::find(1)->first(); //temporary
+        $projects = Project::where('user_id', 1)->get(); //TODO: add method findAllProjects
 
         return view('projects.create', [
             'user' => $user,
@@ -29,7 +29,7 @@ class ProjectsController extends Controller
     {
         $data = $request->validated();
         //$user = $request->user();
-        $user = User::find(1)->first();
+        $user = User::find(1)->first(); //temporary
 
         Project::forceCreate([
             'name' => $data['name'],

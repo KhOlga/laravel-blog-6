@@ -16,3 +16,4 @@ command.txt
 /public/js/*
 public/images/*
 public/css/*
+webpack.config.js.backup
