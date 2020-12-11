@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container">
-        <example></example>
 
         <form method="POST" action="{{ route('projects.store') }}" @submit="onSubmit" @keydown="form.errors.clear($event.target.name)">
             @method('POST')
@@ -31,6 +30,3 @@
         @include('projects.list')
     </div>
 @endsection
-
-
-

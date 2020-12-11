@@ -35,6 +35,10 @@ Route::group(['prefix' => 'projects', 'as' => 'projects.'], function () {
     Route::post('create', 'ProjectsController@store')->name('store');
 });
 
+Route::group(['prefix' => 'shop', 'as' => 'shop.'], function () {
+    Route::get('coupon', 'CouponController@index')->name('coupon');
+});
+
 
 Route::get('skills', function() {
     return [

@@ -85,12 +85,19 @@
                 </div>
             </div>
         </nav>
+        <notification></notification>
 
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div>
+            <h1>
+                @{{ shared.user.name }}
+            </h1>
+        </div>
     </div>
-    <script src="/js/vendor.js"></script>
+
     <script src="/js/app.js"></script>
 </body>
 </html>
