@@ -4,7 +4,7 @@
         "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.9",
